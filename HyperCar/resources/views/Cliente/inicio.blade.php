@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ asset('css/generic.css') }}">
+<link rel="stylesheet" href="{{ asset('css/ClienteCss/inicio.css') }}">
 
 <p>você está logado<p>
 <form action="{{ route('logout') }}" method="POST">

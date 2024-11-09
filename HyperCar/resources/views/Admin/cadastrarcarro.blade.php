@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="{{ asset('css/generic.css') }}">
+<link rel="stylesheet" href="{{ asset('css/AdminCss/cadastrar_carro.css') }}">
+
 <form action="{{ route('admin.carros.store') }}" method="POST">
     @csrf
     <!-- Exibição de erros -->
