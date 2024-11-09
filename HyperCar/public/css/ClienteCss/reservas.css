@@ -1,0 +1,101 @@
+/* Estilo geral */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-color);
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: var(--primary-color-contrast);
+    color: var(--field-background-color);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 600px;
+    padding: 2rem;
+    margin-top: 5rem;
+    background-color: var(--primary-color-contrast);
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+label {
+    font-weight: bold;
+    color: var(--field-background-color);
+}
+
+input, select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--field-background-color);
+    color: var(--primary-color);
+    font-size: 1rem;
+    outline: none;
+}
+
+button {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color-contrast);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    align-self: center;
+}
+
+button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.alert {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+#idCarroSelecionado {
+    font-weight: bold;
+    color: var(--primary-color);
+}

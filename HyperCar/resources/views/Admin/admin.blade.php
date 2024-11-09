@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Home</title>
-    <!-- Inclua aqui seu CSS ou link para o arquivo de estilo -->
+    <link rel="stylesheet" href="{{ asset('css/generic.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/AdminCss/admin.css') }}">
 </head>
 <body>
     <h1>Bem-vindo ao Painel de Administração</h1>
