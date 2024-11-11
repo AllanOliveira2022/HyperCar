@@ -1,0 +1,147 @@
+/* Variáveis */
+:root {
+    --primary-color: #1f1f1f;
+    --primary-color-contrast: #2d2d2d;
+    --primary-color-hover: #3c3c3c;
+    --card-background: #3c3c3c;
+    --button-color: #00b894;
+    --delete-button-color: #e74c3c;
+    --delete-button-hover: #c0392b;
+    --text-color: #ffffff;
+    --field-background-color: #f0f0f0;
+    --unavailable-background: #ff6b6b;
+}
+
+/* Estilo geral do corpo */
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--field-background-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Barra de Filtros e containers de cards */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ajustes para os cards */
+.card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    color: var(--field-background-color);
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--button-color);
+}
+
+.card-text {
+    margin-bottom: 1rem;
+}
+
+/* Estilo para o formulário de devolução */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    padding: 0.8rem; /* Mais confortável */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: var(--delete-button-color);
+    color: var(--text-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--delete-button-hover);
+}
+
+/* Estilo para o botão Voltar */
+.voltar-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background-color: var(--button-color);
+    color: var(--text-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.voltar-btn:hover {
+    background-color: #00a076;
+}
+
+/* Estilo para a mensagem de nenhuma reserva ativa */
+.text-center {
+    text-align: center;
+    color: var(--field-background-color);
+}
+
+/* Garantir que os cards fiquem menores e ajustados */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Aumenta o espaçamento entre os cards */
+}
+
+.col-md-4 {
+    flex: 1 1 calc(33.333% - 1rem); /* Ajuste para 3 cards por linha */
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+/* Ajustes gerais no botão para remover underline */
+a.btn {
+    text-decoration: none; /* Remover underline */
+}
+
+a.btn:hover {
+    text-decoration: none; /* Remover underline */
+}
+/* Estilos para a mensagem de sucesso */
+.alert-success {
+    border: 2px solid #28a745; /* Borda verde */
+    background-color: #d4edda; /* Fundo claro verde */
+    color: #155724; /* Texto verde escuro */
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: block; /* Garante que a mensagem aparece inicialmente */
+}

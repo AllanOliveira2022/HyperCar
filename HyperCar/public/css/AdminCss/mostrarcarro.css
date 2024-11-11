@@ -1,0 +1,165 @@
+:root {
+    --primary-color: #1f1f1f;
+    --primary-color-contrast: #2d2d2d;
+    --primary-color-hover: #3c3c3c;
+    --card-background: #3c3c3c;
+    --button-color: #00b894;
+    --delete-button-color: #e74c3c;
+    --delete-button-hover: #c0392b;
+    --text-color: #ffffff;
+    --field-background-color: #f0f0f0;
+    --unavailable-background: #ff6b6b;
+}
+/* Botão Voltar */
+.btn-primary {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    position: absolute; /* Posicionamento absoluto */
+    top: 2rem; /* Distância do topo */
+    left: 2rem; /* Distância da esquerda */
+}
+
+.btn-primary:hover {
+    background-color: #00a076; /* Uma tonalidade mais escura para hover */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--field-background-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Barra de Filtros */
+.filter-bar {
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--primary-color-contrast);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-bar label {
+    color: var(--field-background-color);
+    font-weight: bold;
+}
+
+.filter-bar input,
+.filter-bar select,
+.filter-bar button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.filter-bar button {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.filter-bar button:hover {
+    background-color: #00a076;
+}
+
+/* Cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    color: var(--field-background-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--button-color);
+}
+
+.card-content p {
+    margin: 0.5rem 0;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.card-actions a,
+.card-actions button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.card-actions a:hover {
+    background-color: #00a076;
+}
+
+.card-actions button {
+    background-color: var(--delete-button-color);
+}
+
+.card-actions button:hover {
+    background-color: var(--delete-button-hover);
+}
+
+/* Estilo para carros indisponíveis */
+.disponibilidade.indisponivel {
+    background-color: var(--unavailable-background);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-weight: bold;
+}

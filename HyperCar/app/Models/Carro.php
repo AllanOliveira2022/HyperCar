@@ -14,7 +14,7 @@ class Carro extends Model
     public $timestamps = false;
 
     // Defina os campos que podem ser preenchidos em massa
-    protected $fillable = ['Modelo', 'Tipo', 'Disponibilidade', 'Placa', 'Quilometragem', 'PrecoDiaria'];
+    protected $fillable = ['Modelo', 'Tipo', 'Disponibilidade', 'Placa', 'Quilometragem','AnoFabricacao' ,'PrecoDiaria'];
 
     // Relacionamento com o modelo Reserva (um carro pode ter várias reservas)
     public function reservas()

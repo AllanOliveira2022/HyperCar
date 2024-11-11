@@ -29,6 +29,23 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::delete('/carros/{id}', [CarroController::class, 'destroy'])->name('admin.carros.destroy'); // Remover um carro
     Route::get('/carros-disponiveis', [CarroController::class, 'carrosDisponiveis'])->name('admin.carros.disponiveis'); // Listar carros disponíveis
 });
+
+//reservas
+Route::middleware(['auth'])->group(function () {
+    Route::get('/reservas', [ReservaController::class, 'index'])->name('reservas.index');
+    Route::post('/reservas', [ReservaController::class, 'store'])->name('reservas.store');
+    Route::get('/reservas/minhas', [ReservaController::class, 'minhasReservas'])->name('reservas.minhas');
+    Route::get('/reservas/{id}/edit', [ReservaController::class, 'edit'])->name('reservas.edit');
+    Route::put('/reservas/{id}', [ReservaController::class, 'update'])->name('reservas.update');
+
+    Route::post('/reservas/devolver', [ReservaController::class, 'devolver'])->name('reservas.devolver');
+    Route::get('/reservas/devolucao', [ReservaController::class, 'processarDevolucao'])->name('reservas.processarDevolucao')->middleware('auth');
+
+    //mostrar todas as reservas
+    Route::get('/todas-reservas', [ReservaController::class, 'todasReservas'])->name('todas.reservas');
+
+});
+
 //logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -36,10 +53,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//reservas
+/*reservas
 Route::middleware(['auth'])->group(function () {
     Route::get('/reservas', [ReservaController::class, 'index'])->name('reservas.index');
     Route::post('/reservas', [ReservaController::class, 'store'])->name('reservas.store');
-});
+});*/
 
 
+//controle de carro
+//mostrar todos os carros
+Route::get('/total-carros', [CarroController::class, 'index'])->name('admin.total_carros');

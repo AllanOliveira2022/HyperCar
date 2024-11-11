@@ -9,3 +9,7 @@
 
 <h1>reservar</h1>
 <a href="{{ route('reservas.index') }}">Reservar</a> 
+
+<h1>Ver reservas</h1>
+<a href="{{ route('reservas.minhas') }}">ver</a> 
+<p>Bem-vindo, {{ auth()->user()->Nome }}!</p>

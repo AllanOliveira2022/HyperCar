@@ -1,8 +1,22 @@
-<link rel="stylesheet" href="{{ asset('css/generic.css') }}">
-<link rel="stylesheet" href="{{ asset('css/AdminCss/cadastrar_carro.css') }}">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Carros</title>
+    <link rel="stylesheet" href="{{ asset('css/generic.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/AdminCss/cadastrar_carro.css') }}">
+</head>
+<body>
+
+<!-- Botão "Voltar" no canto superior esquerdo -->
+<a href="{{ route('admin') }}" class="btn btn-primary">Voltar</a>
+
+<h1>Cadastro de Carros</h1>
 
 <form action="{{ route('admin.carros.store') }}" method="POST">
     @csrf
+
     <!-- Exibição de erros -->
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -44,8 +58,15 @@
     <label for="Quilometragem">Quilometragem:</label>
     <input type="number" name="Quilometragem" value="{{ old('Quilometragem') }}" required>
 
+    <!-- Novo campo para Ano de Fabricação -->
+    <label for="AnoFabricacao">Ano de Fabricação:</label>
+    <input type="number" name="AnoFabricacao" value="{{ old('AnoFabricacao') }}" required min="1900" max="{{ date('Y') }}">
+
     <label for="PrecoDiaria">Preço por Diária:</label>
     <input type="number" name="PrecoDiaria" step="0.01" value="{{ old('PrecoDiaria') }}" required>
 
     <button type="submit">Cadastrar Carro</button>
 </form>
+
+</body>
+</html>

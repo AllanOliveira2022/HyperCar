@@ -1,0 +1,120 @@
+/* Estilos para o layout geral */
+:root {
+    --primary-color: #1f1f1f;
+    --primary-color-contrast: #2d2d2d;
+    --primary-color-hover: #3c3c3c;
+    --card-background: #3c3c3c;
+    --button-color: #00b894;
+    --delete-button-color: #e74c3c;
+    --delete-button-hover: #c0392b;
+    --text-color: #ffffff;
+    --field-background-color: #f0f0f0;
+    --unavailable-background: #ff6b6b;
+    --highlight-color: #00b894; /* Cor de destaque */
+    --hover-color: #3c3c3c; /* Cor para o hover nas linhas */
+    --table-border-color: #444; /* Cor da borda */
+    --even-row-bg: #2c2c2c; /* Fundo para linhas pares */
+    --odd-row-bg: #333; /* Fundo para linhas ímpares */
+}
+
+/* Estilos para o layout geral */
+body {
+    background-color: var(--primary-color);
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 2rem;
+}
+
+/* Contêiner central */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+header h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--field-background-color);
+}
+
+/* Tabela de Reservas */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    background-color: var(--card-background);
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--table-border-color); /* Adicionando borda para a tabela */
+}
+
+/* Estilo das células da tabela */
+.table th, .table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px; /* Bordas arredondadas nas células */
+}
+
+/* Cor do cabeçalho da tabela */
+.table th {
+    background-color: var(--primary-color-contrast);
+    font-weight: bold;
+    color: var(--highlight-color); /* Cor de destaque para o texto do cabeçalho */
+}
+
+/* Alterar cor de fundo quando passar o mouse sobre a linha */
+.table tbody tr:hover {
+    background-color: var(--hover-color); /* Cor de fundo ao passar o mouse */
+    transition: background-color 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+/* Estilos para as linhas da tabela (alternando cores de fundo) */
+.table tbody tr:nth-child(odd) {
+    background-color: var(--odd-row-bg); /* Cor de fundo para linhas ímpares */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: var(--even-row-bg); /* Cor de fundo para linhas pares */
+}
+
+/* Estilos para os status das reservas */
+.text-success {
+    color: #28a745; /* Cor verde para "Devolvido" */
+}
+
+.text-danger {
+    color: #e74c3c; /* Cor vermelha para "Cancelado" */
+}
+
+/* Estilo para a reserva pendente (cor laranja) */
+.text-pendente {
+    color: #FFA500; /* Cor laranja para reservas pendentes */
+}
+
+/* Botão Voltar com fundo verde */
+.btn-back {
+    background-color: #28a745; /* Fundo verde */
+    color: var(--text-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #218838; /* Cor do verde quando passar o mouse */
+}
+
+/* Outras regras para o site em modo escuro */
+footer a {
+    display: none; /* Remover o footer antigo */
+}

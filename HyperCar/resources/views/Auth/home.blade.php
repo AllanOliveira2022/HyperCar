@@ -1,4 +1,3 @@
-<!-- resources/views/home.blade.php -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,7 +12,7 @@
         <h1>Bem-vindo a HyperCar</h1>
     </header>
     <main>
-        <h2 class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus velit error ut cum modi! Corrupti deleniti cum beatae, nisi sit molestiae sequi veniam, ullam quo voluptate assumenda laboriosam aut commodi.</h2>
+        <h2 class="about">O HyperCar é uma plataforma de locação de veículos online, projetada para oferecer uma experiência simples e eficiente tanto para usuários quanto para administradores.</h2>
         <section class="sign">
             <p>Entre ou cadastre-se</p>
             <a href="{{ route('login') }}">Login</a>

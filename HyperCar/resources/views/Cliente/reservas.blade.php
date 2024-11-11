@@ -96,5 +96,6 @@
         // Exibir o ID já selecionado, se houver
         window.onload = mostrarIdSelecionado;
     </script>
+    <a href="{{ route('inicio') }}">voltar</a> 
 </body>
 </html>

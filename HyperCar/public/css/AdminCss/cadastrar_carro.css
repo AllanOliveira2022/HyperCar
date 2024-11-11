@@ -1,61 +1,110 @@
+:root {
+    --primary-color: #1f1f1f;
+    --primary-color-contrast: #2d2d2d;
+    --primary-color-hover: #3c3c3c;
+    --field-background-color: #f0f0f0;
+    --button-color: #00b894;
+    --text-color: #ffffff;
+    --alert-danger-bg: #e57373;
+    --alert-success-bg: #66bb6a;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
+    justify-content: flex-start;
+    padding-top: 2rem;
     background-color: var(--primary-color);
+    color: var(--text-color);
     margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
 }
 
+h1 {
+    font-size: 2rem;
+    color: var(--field-background-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Botão "Voltar" */
+.btn-primary {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.8rem 1.5rem;
+    color: var(--text-color);
+    background-color: var(--button-color);
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #00a076;
+    transform: translateY(-2px);
+}
+
+/* Formulário */
 form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
     padding: 2.5rem;
-    width: 80%;
+    width: 90%;
     max-width: 500px;
     background-color: var(--primary-color-contrast);
     border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Labels and Inputs */
 label {
     font-size: 1rem;
     font-weight: bold;
     color: var(--field-background-color);
-    margin-bottom: 0.5rem;
 }
 
-input,select {
+input,
+select {
     padding: 0.8rem;
     border-radius: 8px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--field-background-color);
-    color: var(--primary-color);
+    border: 1px solid var(--primary-color-hover);
+    background-color: #3c3c3c;
+    color: var(--field-background-color);
     font-size: 1rem;
     width: 100%;
     outline: none;
 }
 
+input:focus,
+select:focus {
+    border-color: var(--button-color);
+}
+
+/* Buttons */
 button {
     padding: 0.8rem 1.5rem;
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--primary-color-contrast);
-    background-color: var(--primary-color);
+    color: var(--text-color);
+    background-color: var(--button-color);
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s ease;
     align-self: center;
 }
 
 button:hover {
-    background-color: var(--primary-color-hover);
+    background-color: #00a076;
+    transform: translateY(-2px);
 }
 
+/* Alerts */
 .alert {
     padding: 1rem;
     width: 100%;
@@ -66,11 +115,11 @@ button:hover {
 }
 
 .alert-danger {
-    background-color: #f8d7da;
-    color: #721c24;
+    background-color: var(--alert-danger-bg);
+    color: #f44336;
 }
 
 .alert-success {
-    background-color: #d4edda;
-    color: #155724;
+    background-color: var(--alert-success-bg);
+    color: #388e3c;
 }

@@ -9,16 +9,19 @@ class CarroController extends Controller
 {
     // Listar todos os carros
     public function index()
-    {
-        // Obtém todos os carros
-        $carros = Carro::all();
-        return view('admin.carros.index', compact('carros'));
-    }
+{
+    // Obtenha os carros e calcule os totais
+    $carros = Carro::all();
+
+    // Passa as variáveis para a view
+    return view('Admin.mostrarcarro', compact('carros'));
+}
+
 
     // Exibir formulário para cadastrar um novo carro
     public function create()
     {
-        return view('admin.cadastrarcarro');
+        return view('Admin.cadastrarcarro');
     }
 
     // Salvar o novo carro no banco de dados
@@ -31,6 +34,7 @@ class CarroController extends Controller
         'Disponibilidade' => 'required|integer|in:0,1',
         'Placa' => 'required|string|size:7|unique:carros,Placa',
         'Quilometragem' => 'required|integer|min:0',
+        'AnoFabricacao' => 'required|integer|min:0',
         'PrecoDiaria' => 'required|numeric|min:0',
     ]);
 
@@ -43,6 +47,7 @@ class CarroController extends Controller
     $carro->Disponibilidade = $request->Disponibilidade;
     $carro->Placa = $request->Placa;
     $carro->Quilometragem = $request->Quilometragem;
+    $carro->AnoFabricacao = $request->AnoFabricacao;
     $carro->PrecoDiaria = $request->PrecoDiaria;
 
     try {
@@ -57,14 +62,14 @@ class CarroController extends Controller
     public function show($id)
     {
         $carro = Carro::findOrFail($id);
-        return view('admin.carros.show', compact('carro'));
+        return view('Admin.mostrarcarro', compact('carro'));
     }
 
     // Exibir formulário para editar um carro
     public function edit($id)
     {
         $carro = Carro::findOrFail($id);
-        return view('admin.carros.edit', compact('carro'));
+        return view('Admin.editarcarro', compact('carro'));
     }
 
     // Atualizar um carro no banco de dados
@@ -77,6 +82,7 @@ class CarroController extends Controller
             'Disponibilidade' => 'required|integer|in:0,1',
             'Placa' => 'required|string|size:7|unique:carros,Placa,' . $id . ',IdCarro',
             'Quilometragem' => 'required|integer|min:0',
+            'AnoFabricacao' => 'required|integer|min:0',
             'PrecoDiaria' => 'required|numeric|min:0',
         ]);
 
@@ -88,6 +94,7 @@ class CarroController extends Controller
             'Disponibilidade' => $request->Disponibilidade,
             'Placa' => $request->Placa,
             'Quilometragem' => $request->Quilometragem,
+            'AnoFabricacao' => $request->AnoFabricacao,
             'PrecoDiaria' => $request->PrecoDiaria,
         ]);
 
@@ -109,4 +116,16 @@ class CarroController extends Controller
         $carrosDisponiveis = Carro::where('Disponibilidade', 1)->get();
         return view('admin.carros.disponiveis', compact('carrosDisponiveis'));
     }
+
+    //controle de carros
+    public function verificarTotalCarros()
+    {
+        // Utilizando Eloquent para contar o total de carros
+        $totalCarros = Carro::count(); // Contagem do número de carros
+        // Retorna o total de carros ou passa para a view
+        return view('Admin.admin', compact('totalCarros'));
+    }
+
+    // ... outros métodos do controller
+
 }
