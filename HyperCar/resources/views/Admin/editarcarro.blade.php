@@ -8,10 +8,6 @@
 </head>
 <body>
     <div class="container">
-        <section class="back-link">
-            <a href="{{ route('admin.carros.index') }}">Voltar</a>
-        </section>
-
         <header>
             <h1>Editar Carro</h1>
         </header>
@@ -61,6 +57,7 @@
                 </div>
 
                 <div class="form-actions">
+                    <a href="{{ route('admin.carros.index') }}">Voltar</a>
                     <button type="submit">Salvar Alterações</button>
                 </div>
             </form>

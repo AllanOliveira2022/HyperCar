@@ -67,18 +67,20 @@
                 @enderror
             </div>
 
-            <div>
+            <div class="divButton">
+                <a href="{{ route('inicio') }}">Voltar</a> 
                 <button type="submit">Reservar</button>
             </div>
         </form>
 
-        <!-- Exibir o ID do carro selecionado -->
+        <!--
         <div>
             <p>ID do carro selecionado: <span id="idCarroSelecionado">Nenhum</span></p>
         </div>
+        -->
         @if (session('error'))
-    <div class="alert alert-danger">{{ session('error') }}</div>
-@endif
+            <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
     </main>
 
     <footer>
@@ -96,6 +98,5 @@
         // Exibir o ID já selecionado, se houver
         window.onload = mostrarIdSelecionado;
     </script>
-    <a href="{{ route('inicio') }}">voltar</a> 
 </body>
 </html>

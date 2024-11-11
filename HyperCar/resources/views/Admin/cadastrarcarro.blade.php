@@ -8,13 +8,10 @@
     <link rel="stylesheet" href="{{ asset('css/AdminCss/cadastrar_carro.css') }}">
 </head>
 <body>
-
-<!-- Botão "Voltar" no canto superior esquerdo -->
-<a href="{{ route('admin') }}" class="btn btn-primary">Voltar</a>
-
-<h1>Cadastro de Carros</h1>
-
 <form action="{{ route('admin.carros.store') }}" method="POST">
+    <div class="buttons">
+    <h1>Cadastro de Carros</h1>
+    </div>
     @csrf
 
     <!-- Exibição de erros -->
@@ -65,7 +62,10 @@
     <label for="PrecoDiaria">Preço por Diária:</label>
     <input type="number" name="PrecoDiaria" step="0.01" value="{{ old('PrecoDiaria') }}" required>
 
-    <button type="submit">Cadastrar Carro</button>
+    <div class="buttons">
+        <a href="{{ route('admin') }}" class="btn btn-primary">Voltar</a>
+        <button type="submit">Cadastrar</button>
+    </div>
 </form>
 
 </body>

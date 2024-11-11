@@ -1,13 +1,6 @@
 :root {
-    --primary-color: #1f1f1f;
-    --primary-color-contrast: #2d2d2d;
-    --primary-color-hover: #3c3c3c;
-    --button-color: #00b894; /* Cor de botão moderna */
-    --button-hover-color: #17a085;
-    --text-color: #ffffff;
-    --input-background-color: #f0f0f0;
-    --label-color: #f5f5f5;
-    --border-radius: 15px; /* Bordas mais arredondadas */
+    
+    --border-radius: 25px; /* Bordas mais arredondadas */
     --box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Sombras suaves */
 }
 
@@ -95,7 +88,7 @@ main {
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--primary-color-contrast);
+    color: var(--label-color);
     background-color: var(--button-color);
     text-decoration: none;
     border-radius: var(--border-radius);

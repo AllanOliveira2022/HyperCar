@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="{{ asset('css/generic.css') }}">
+<link rel="stylesheet" href="{{ asset('css/ReservaCss/minhasReservas.css') }}">
+
 <h1>Minhas Reservas</h1>
 
 @if (session('success'))

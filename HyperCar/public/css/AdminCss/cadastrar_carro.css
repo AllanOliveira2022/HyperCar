@@ -7,6 +7,8 @@
     --text-color: #ffffff;
     --alert-danger-bg: #e57373;
     --alert-success-bg: #66bb6a;
+    --button-red: rgb(222, 28, 28);
+    --button-red-hover: rgb(211, 24, 24);
 }
 
 body {
@@ -14,10 +16,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 2rem;
     background-color: var(--primary-color);
     color: var(--text-color);
     margin: 0;
+    padding: 0.5rem;
     font-family: Arial, sans-serif;
     min-height: 100vh;
 }
@@ -29,21 +31,29 @@ h1 {
     text-align: center;
 }
 
+.buttons{
+    padding-top: 0.25rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
 /* Botão "Voltar" */
 .btn-primary {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
+    font-weight: bold;
     padding: 0.8rem 1.5rem;
     color: var(--text-color);
-    background-color: var(--button-color);
+    background-color: var(--button-red);
     border-radius: 25px;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.2s ease;
 }
 
 .btn-primary:hover {
-    background-color: #00a076;
+    background-color: var(--button-red-hover);
     transform: translateY(-2px);
 }
 
@@ -52,8 +62,8 @@ form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
-    padding: 2.5rem;
+    gap: 5px;
+    padding: 2rem;
     width: 90%;
     max-width: 500px;
     background-color: var(--primary-color-contrast);
