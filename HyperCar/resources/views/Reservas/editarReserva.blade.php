@@ -1,4 +1,8 @@
+<link rel="stylesheet" href="{{ asset('css/generic.css') }}">
+<link rel="stylesheet" href="{{ asset('css/ReservaCss/editarReserva.css') }}">
 
+
+<main>
 <h1>Editar Reserva</h1>
 
 <form action="{{ route('reservas.update', $reserva->IdReserva) }}" method="POST">
@@ -20,6 +24,10 @@
     <label for="DataFim">Data Fim:</label>
     <input type="date" name="DataFim" value="{{ $reserva->DataFim }}" required>
 
-    <button type="submit">Atualizar Reserva</button>
+    <div class="divButton">
+        <a href="{{ route('inicio') }}">Voltar</a> 
+        <button type="submit">Atualizar</button>
+    </div>
 </form>
-<a href="{{ route('inicio') }}">voltar</a> 
+
+</main>
