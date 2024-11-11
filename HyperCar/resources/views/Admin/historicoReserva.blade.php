@@ -35,9 +35,9 @@
                 <tbody>
                     @foreach($reservas as $reserva)
                         <tr>
-                            <td>{{ $reserva->IdCarro}}</td>
+                            <td>{{ $reserva->IdReserva}}</td>
                             <td>{{ $reserva->usuario->Nome }}</td>
-                            <td>{{ $reserva->IdCarro }}</td>
+                            <td>{{ $reserva->carro ? $reserva->carro->Modelo : 'Carro não encontrado' }}</td>
                             <td>{{ \Carbon\Carbon::parse($reserva->DataInicio)->format('d/m/Y') }}</td>
                             <td>{{ \Carbon\Carbon::parse($reserva->DataFim)->format('d/m/Y') }}</td>
                             <td class="

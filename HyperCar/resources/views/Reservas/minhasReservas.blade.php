@@ -19,7 +19,7 @@
     <tbody>
         @foreach ($reservas as $reserva)
         <tr class="{{ $reserva->Estatus == 'Devolvido' ? 'table-secondary text-muted' : '' }}">
-                <td>{{ $reserva->IdCarro }}</td>
+        <td>{{ $reserva->carro ? $reserva->carro->Modelo : 'Carro não encontrado' }}</td>
                 <td>{{ $reserva->DataInicio }}</td>
                 <td>{{ $reserva->DataFim }}</td>
                 <td>{{ $reserva->Estatus }}</td>
